@@ -72,42 +72,48 @@ function chooseDare(){
 }
 
 bot.on('message', msg => {
-    if(msg.channel.id === '737296527973810206'){
-	    if(msg.content === '-truth'){
-		msg.channel.send('thinking of truth...');
-	    }
-	    if(msg.content === '-dare'){
-		if(needDareReset){
-		    msg.channel.send("You have gone through them all! Please use the `-resetDare` command to start over, or just do some truths!");
+	if(msg.content === '-truth' && msg.channel.id === '737296527973810206'){
+	msg.channel.send('thinking of truth...');
+	}
+else{
+msg.channel.send("You can only use me in the truth or dare channel!"); }
+
+	if(msg.content === '-dare'  && msg.channel.id === '737296527973810206'){
+	if(needDareReset){
+		msg.channel.send("You have gone through them all! Please use the `-resetDare` command to start over, or just do some truths!");
+	}
+	else{
+		if(daresDone.length == dares.length){
+		msg.channel.send("You have gone through them all! Please use the `-resetDare` command to start over, or just do some truths!");
+		needDareReset = true;
 		}
 		else{
-		    if(daresDone.length == dares.length){
-			msg.channel.send("You have gone through them all! Please use the `-resetDare` command to start over, or just do some truths!");
-			needDareReset = true;
-		    }
-		    else{
-			msg.channel.send('thinking of dare...');
-				chooseDare();
-				msg.reply('I dare you to... ' + dares[chosen]);
-				daresDone.push(chosen);
-			console.log(daresDone);
-		    }
+		msg.channel.send('thinking of dare...');
+			chooseDare();
+			msg.reply('I dare you to... ' + dares[chosen]);
+			daresDone.push(chosen);
+		console.log(daresDone);
 		}
-	    }
-		if(msg.content === '-resetDare'){
-		msg.channel.send('Reset Dares!');
-			daresDone = [];
-		needDareReset = false;
-	    }
-	    if(msg.content === 'hey bot!'){
-		msg.reply('Hi!');
-	    }
-		if(msg.content === 'shutdown'){
-		bot.destroy();
-	    }
-	    if(msg.content === '-help'){
-		msg.channel.send("Hey! I'm the truth or dare bot here on Nerve! With me, you don't need to worry about thinking of truths or dares! Just use `-truth` and `-dare` when it is your turn and the bot will think of one for you! Of course, my creator is only human so please feel free to DM <@303097521314725890> with more truth or dares!");
-	    }
-      }
-      else { msg.channel.send("You can only use me in the Truth or Dare channel!"); }
+	}
+	}
+else{
+msg.channel.send("You can only use me in the truth or dare channel!"); }
+
+	if(msg.content === '-resetDare'  && msg.channel.id === '737296527973810206'){
+	msg.channel.send('Reset Dares!');
+		daresDone = [];
+	needDareReset = false;
+	}
+else{
+msg.channel.send("You can only use me in the truth or dare channel!"); }
+	if(msg.content === 'hey bot!'){
+	msg.reply('Hi!');
+	}
+	if(msg.content === 'shutdown'){
+	bot.destroy();
+	}
+	if(msg.content === '-help'){
+	msg.channel.send("Hey! I'm the truth or dare bot here on Nerve! With me, you don't need to worry about thinking of truths or dares! Just use `-truth` and `-dare` when it is your turn and the bot will think of one for you! Of course, my creator is only human so please feel free to DM <@303097521314725890> with more truth or dares!");
+	}
+
 });
