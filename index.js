@@ -125,7 +125,7 @@ setInterval(function(){
 else{
     index = 0;
      bot.setActivity("Truth or Dare", {type: "PLAYING"});
-}, 2000);
+}}, 2000);
 
 changeStat();
 
