@@ -75,7 +75,7 @@ bot.on('message', msg => {
 	if(msg.content === '-truth' && msg.channel.id === '737296527973810206'){
 	msg.channel.send('thinking of truth...');
 	}
-else{
+else if(msg.content === '-truth'){
 msg.channel.send("You can only use me in the truth or dare channel!"); }
 
 	if(msg.content === '-dare'  && msg.channel.id === '737296527973810206'){
@@ -96,7 +96,7 @@ msg.channel.send("You can only use me in the truth or dare channel!"); }
 		}
 	}
 	}
-else{
+else if(msg.content === '-dare'){
 msg.channel.send("You can only use me in the truth or dare channel!"); }
 
 	if(msg.content === '-resetDare'  && msg.channel.id === '737296527973810206'){
@@ -104,7 +104,7 @@ msg.channel.send("You can only use me in the truth or dare channel!"); }
 		daresDone = [];
 	needDareReset = false;
 	}
-else{
+else if(msg.content === '-resetDare'){
 msg.channel.send("You can only use me in the truth or dare channel!"); }
 	if(msg.content === 'hey bot!'){
 	msg.reply('Hi!');
