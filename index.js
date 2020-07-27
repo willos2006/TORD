@@ -63,7 +63,7 @@ var chosen;
 function chooseDare(){
     var conflict = 1;
     while(conflict > 0){
-	    chosen = Math.floor(Math.random() * dares.length - 1);
+	    chosen = Math.floor(Math.random() * (dares.length - 1));
         console.log(chosen);
         var conflict = 0;
         if(daresDone.length == dares.length - 1){
