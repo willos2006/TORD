@@ -20,7 +20,7 @@ setInterval(function(){
 else{
     index = 0;
      bot.user.setActivity("Truth or Dare", {type: "PLAYING"});
-}}, 2000);
+}}, 7000);
 
 });
 
