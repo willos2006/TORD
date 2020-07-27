@@ -69,7 +69,7 @@ function chooseDare(){
 	        });
         }
     }
-}
+}   
 
 bot.on('message', msg => {
 	if(msg.content === '-truth' && msg.channel.id === '737296527973810206'){
@@ -115,5 +115,19 @@ msg.channel.send("You can only use me in the truth or dare channel!"); }
 	if(msg.content === '-help'){
 	msg.channel.send("Hey! I'm the truth or dare bot here on Nerve! With me, you don't need to worry about thinking of truths or dares! Just use `-truth` and `-dare` when it is your turn and the bot will think of one for you! Of course, my creator is only human so please feel free to DM <@303097521314725890> with more truth or dares!");
 	}
+
+async function changeStat(){
+    await sleep(2000);
+    bot.user.setActivity('In development', {
+        type: 'LISTENING'
+    });
+    await sleep(2000);
+    bot.user.setActivity('Truth or Dare', {
+        type: 'PLAYING'
+    });
+    changeStat();
+}
+
+changeStat();
 
 });
