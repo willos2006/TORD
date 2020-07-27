@@ -14,12 +14,12 @@ bot.on('ready', () => {
 var index = 0;
 setInterval(function(){
     if(index === 0){
-    bot.setActivity("my development", {type: "WATCHING"});
+    bot.user.setActivity("my development", {type: "WATCHING"});
     index = 1;
 }
 else{
     index = 0;
-     bot.setActivity("Truth or Dare", {type: "PLAYING"});
+     bot.user.setActivity("Truth or Dare", {type: "PLAYING"});
 }}, 2000);
 
 });
