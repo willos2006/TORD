@@ -117,7 +117,7 @@ msg.channel.send("You can only use me in the truth or dare channel!"); }
 	}
 
 var index = 0;
-setInterval({
+setInterval(function(){
     if(index === 0){
     bot.setActivity("my development", {type: "WATCHING"});
     index = 1;
