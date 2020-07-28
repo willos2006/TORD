@@ -64,7 +64,7 @@ var truths = [
 ]
 
 var daresDone = [];
-var truthesDone = [];
+var truthsDone = [];
 
 var currentDare;
 var currentTuth;
