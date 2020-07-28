@@ -14,7 +14,7 @@ bot.on('ready', () => {
 var index = 0;
 setInterval(function(){
     if(index === 0){
-    bot.user.setActivity("my development", {type: "WATCHING"});
+    bot.user.setActivity("out for -help", {type: "WATCHING"});
     index = 1;
 }
 else{
