@@ -78,7 +78,6 @@ function chooseDare(){
     var conflict = 1;
     while(conflict > 0){
 	    chosen = Math.floor(Math.random() * (dares.length - 1));
-        console.log(chosen);
         var conflict = 0;
         if(daresDone.length == dares.length - 1){
             needDareReset = true;
@@ -86,9 +85,7 @@ function chooseDare(){
         }
         else {
 	        daresDone.forEach(function (i, index){
-                console.log("position: " + i);
 		        if(i == chosen){
-                    console.log("position: " + i);
 			        conflict += 1;
 		        }
 	        });
@@ -100,7 +97,6 @@ function chooseTruth(){
     var conflict = 1;
     while(conflict > 0){
 	    chosen = Math.floor(Math.random() * (truths.length - 1));
-        console.log(chosen);
         var conflict = 0;
         if(truthsDone.length == truths.length - 1){
             needTruthReset = true;
@@ -108,9 +104,7 @@ function chooseTruth(){
         }
         else {
 	            truthsDone.forEach(function (i, index){
-                console.log("position: " + i);
 		        if(i == chosen){
-                    console.log("position: " + i);
 			        conflict += 1;
 		        }
 	        });
@@ -133,7 +127,6 @@ if(needTruthReset){
 			chooseTruth();
 			msg.reply(truths[chosen]);
 			truthsDone.push(chosen);
-		console.log(truthsDone);
 		}
 	}
 	}
@@ -154,7 +147,6 @@ msg.channel.send("You can only use me in the truth or dare channel!"); }
 			chooseDare();
 			msg.reply('I dare you to... ' + dares[chosen]);
 			daresDone.push(chosen);
-		console.log(daresDone);
 		}
 	}
 	}
