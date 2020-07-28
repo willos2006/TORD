@@ -51,9 +51,23 @@ var dares = [
 'LEAVE THIS SPARE',
 ]
 
+var truths = [
+'Who of all your family would you save if you could only save one?',
+'Do you love anyone (like a crush)',
+'Who do you like  (crush)',
+'Least favorite person in this server',
+'Most favorite person in this server',
+'Who do you hate most?',
+'How many discord servers are you in?',
+'Who was the last 5 people you dm’ed',
+'LEAVE SPARE'
+]
+
 var daresDone = [];
+var truthesDone = [];
 
 var currentDare;
+var currentTuth;
 
 var needDareReset = false;
 var needTruthReset = false;
@@ -82,9 +96,47 @@ function chooseDare(){
     }
 }   
 
+function chooseTruth(){
+    var conflict = 1;
+    while(conflict > 0){
+	    chosen = Math.floor(Math.random() * (truths.length - 1));
+        console.log(chosen);
+        var conflict = 0;
+        if(truthsDone.length == truths.length - 1){
+            needTruthReset = true;
+            break;
+        }
+        else {
+	            truthsDone.forEach(function (i, index){
+                console.log("position: " + i);
+		        if(i == chosen){
+                    console.log("position: " + i);
+			        conflict += 1;
+		        }
+	        });
+        }
+    }
+}   
+
 bot.on('message', msg => {
 	if(msg.content === '-truth' && msg.channel.id === '737296527973810206'){
 	msg.channel.send('thinking of truth...');
+if(needTruthReset){
+		msg.channel.send("You have gone through them all! Please use the `-resetTruth` command to start over, or just do some dares!");
+	}
+	else{
+		if(truthsDone.length == truths.length - 1){
+		msg.channel.send("You have gone through them all! Please use the `-resetTruth` command to start over, or just do some dares!");
+		needTruthReset = true;
+		}
+		else{
+		msg.channel.send('thinking of truth...');
+			chooseTruth();
+			msg.reply('I dare you to... ' + truths[chosen]);
+			truthsDone.push(chosen);
+		console.log(truthsDone);
+		}
+	}
 	}
 else if(msg.content === '-truth'){
 msg.channel.send("You can only use me in the truth or dare channel!"); }
@@ -94,7 +146,7 @@ msg.channel.send("You can only use me in the truth or dare channel!"); }
 		msg.channel.send("You have gone through them all! Please use the `-resetDare` command to start over, or just do some truths!");
 	}
 	else{
-		if(daresDone.length == dares.length){
+		if(daresDone.length == dares.length - 1){
 		msg.channel.send("You have gone through them all! Please use the `-resetDare` command to start over, or just do some truths!");
 		needDareReset = true;
 		}
