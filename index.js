@@ -120,7 +120,6 @@ function chooseTruth(){
 
 bot.on('message', msg => {
 	if(msg.content === '-truth' && msg.channel.id === '737296527973810206'){
-	msg.channel.send('thinking of truth...');
 if(needTruthReset){
 		msg.channel.send("You have gone through them all! Please use the `-resetTruth` command to start over, or just do some dares!");
 	}
@@ -132,7 +131,7 @@ if(needTruthReset){
 		else{
 		msg.channel.send('thinking of truth...');
 			chooseTruth();
-			msg.reply('I dare you to... ' + truths[chosen]);
+			msg.reply(truths[chosen]);
 			truthsDone.push(chosen);
 		console.log(truthsDone);
 		}
@@ -168,6 +167,13 @@ msg.channel.send("You can only use me in the truth or dare channel!"); }
 	needDareReset = false;
 	}
 else if(msg.content === '-resetDare'){
+msg.channel.send("You can only use me in the truth or dare channel!"); }
+if(msg.content === '-resetTruth'  && msg.channel.id === '737296527973810206'){
+	msg.channel.send('Reset Truths!');
+		truthsDone = [];
+	needTruthReset = false;
+	}
+else if(msg.content === '-resetTruth'){
 msg.channel.send("You can only use me in the truth or dare channel!"); }
 	if(msg.content === 'hey bot!'){
 	msg.reply('Hi!');
