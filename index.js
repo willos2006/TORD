@@ -179,7 +179,7 @@ msg.channel.send("You can only use me in the truth or dare channel!"); }
 	msg.channel.send("Hey! I'm the truth or dare bot here on Nerve! With me, you don't need to worry about thinking of truths or dares! Just use `-truth` and `-dare` when it is your turn and the bot will think of one for you! Of course, my creator is only human so please feel free to DM <@303097521314725890> with more truth or dares!");
 	}
 if(msg.channel.id === '738077497761202246'){
-    if(!isNan(msg.content)){
+    if(!isNaN(msg.content)){
         if(msg.content == currentNo + 1){
             msg.react('\:white_check_mark:');
             currentNo += 1;
