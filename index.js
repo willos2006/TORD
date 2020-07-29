@@ -1,4 +1,4 @@
-//require('dotenv').config(); 
+﻿//require('dotenv').config(); 
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const TOKEN = process.env.TOKEN;
@@ -59,7 +59,7 @@ var truths = [
 'Most favorite person in this server',
 'Who do you hate most?',
 'How many discord servers are you in?',
-'Who was the last 5 people you dm�ed',
+'Who was the last 5 people you dm’ed',
 'LEAVE SPARE'
 ]
 
@@ -181,11 +181,11 @@ msg.channel.send("You can only use me in the truth or dare channel!"); }
 if(msg.channel.id === '738077497761202246'){
     if(!isNaN(msg.content)){
         if(msg.content == currentNo + 1){
-            msg.react('?');
+            msg.react('\:white_check_mark:');
             currentNo += 1;
         }
         else{
-            msg.react('?');
+            msg.react('\:negative_squared_cross_mark:');
             currentNo = 0;
             msg.channel.send("<@" + msg.author.id + ">  has ruined it! The current number has been reset... start again from 1!");
         }
