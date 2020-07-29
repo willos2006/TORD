@@ -181,7 +181,7 @@ msg.channel.send("You can only use me in the truth or dare channel!"); }
 if(msg.channel.id === '738077497761202246'){
     if(!isNaN(msg.content)){
         if(msg.content == currentNo + 1){
-            msg.react('✔️');
+            msg.react('✅');
             currentNo += 1;
         }
         else{
