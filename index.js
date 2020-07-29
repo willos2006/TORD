@@ -187,7 +187,7 @@ if(msg.channel.id === '738077497761202246'){
         else{
             msg.react('\:negative_squared_check_mark:');
             currentNo = 0;
-            msg.channel.send("<@" + message.author.id + ">  has ruined it! The current number has been reset... start again from 1!");
+            msg.channel.send("<@" + msg.author.id + ">  has ruined it! The current number has been reset... start again from 1!");
         }
     }
 }
