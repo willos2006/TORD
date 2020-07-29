@@ -181,11 +181,11 @@ msg.channel.send("You can only use me in the truth or dare channel!"); }
 if(msg.channel.id === '738077497761202246'){
     if(!isNaN(msg.content)){
         if(msg.content == currentNo + 1){
-            msg.react(':white_check_mark:');
+            msg.react('?');
             currentNo += 1;
         }
         else{
-            msg.react(':negative_squared_check_mark:');
+            msg.react('?');
             currentNo = 0;
             msg.channel.send("<@" + msg.author.id + ">  has ruined it! The current number has been reset... start again from 1!");
         }
